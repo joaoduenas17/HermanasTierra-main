@@ -1,0 +1,80 @@
+{
+    "idioma":"Español",
+    "@idioma":{
+        "description":"el lenguaje predeterminado"
+    },
+   "holaMundo":"hola Mundo",
+    "@holaMundo":{
+        "description":"El hola mundo"
+    },
+    "hola":"Hola {username}",
+    "@hola":{
+        "description":"a welcome message",
+        "placeholders":{
+            "username":{
+                "type":"String"
+            }
+        }
+    },
+    "selecionaidioma":"Seleccione un idioma",
+    "@selecionaidioma":{
+        "description":"a welcome message"
+    },
+    "restaurante":"Restaurantes",
+    "@restaurante":{
+        "description":"a welcome message"
+    },
+    "miorden":"Mi orden",
+    "@miorden":{
+        "description":"a welcome message"
+    },
+     "platosrecomendados":"Platos recomendados",
+    "@platosrecomendados":{
+        "description":"a welcome message"
+    },
+    "mesasdisponibles":"Mesas disponibles",
+    "@mesasdisponibles":{
+        "description":"a welcome message"
+    },
+    "mesa":"Mesa",
+    "@mesa":{
+        "description":"a welcome message"
+    },
+    "cantpersonas":"Cantidad de personas",
+    "@cantpersonas":{
+        "description":"a welcome message"
+    },
+    "pers":"{cantidad} personas",
+    "@holapers":{
+        "description":"a welcome message",
+        "placeholders":{
+            "cantidad":{
+                "type":"String"
+            }
+        }
+    },
+    "menu":"Menu",
+    "@menu":{
+        "description":"a welcome message"
+    },
+    "nodatos":"No existe datos",
+    "@nodatos":{
+        "description":"a welcome message"
+    },
+      "cant":"Cantidad {cantidad}",
+      "@nodatos":{
+        "description":"a welcome message"
+    },
+      "agregarcarrito":"Se agrego a tu carrito",
+      "@agregarcarrito":{
+        "description":"a welcome message"
+    },
+      "select":"Selecione cantidad",
+      "@select":{
+        "description":"a welcome message"
+    },
+      "carrito":"Carrito",
+      "@carrito":{
+        "description":"a welcome message"
+    }
+}

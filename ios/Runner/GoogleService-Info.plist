@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>83643204851-9mt1916sfa7cgqfght4bgpadf7t82ja6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.83643204851-9mt1916sfa7cgqfght4bgpadf7t82ja6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBs9Pd-OFaBR2-3JZlN49w0jzRvg52EkYU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>83643204851</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.devel.pucem.hdtFlutter</string>
+	<key>PROJECT_ID</key>
+	<string>resta-pucem</string>
+	<key>STORAGE_BUCKET</key>
+	<string>resta-pucem.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:83643204851:ios:1e9974af371a1407d46386</string>
+	<key>DATABASE_URL</key>
+	<string>https://resta-pucem-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

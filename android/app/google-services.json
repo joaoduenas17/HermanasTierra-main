@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "83643204851",
+    "firebase_url": "https://resta-pucem-default-rtdb.firebaseio.com",
+    "project_id": "resta-pucem",
+    "storage_bucket": "resta-pucem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83643204851:android:7e1ae527fd180bded46386",
+        "android_client_info": {
+          "package_name": "com.devel.pucem.hdt_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83643204851-u6pd7achcp1dd00e90i49r0ja4um8jjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpOFS3EAmBzXuUWhESQhtfdRZ4zAax6q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83643204851-7g0qk24vrmif1io3ahe6gpo0b0l5ols5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "83643204851-kvp4tvtlo5j7ucnd9asff5q0dj3m2iqp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "con.practica2.retav2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83643204851:android:5335aced7d7f2564d46386",
+        "android_client_info": {
+          "package_name": "com.example.resta_pucem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83643204851-u6pd7achcp1dd00e90i49r0ja4um8jjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpOFS3EAmBzXuUWhESQhtfdRZ4zAax6q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83643204851-7g0qk24vrmif1io3ahe6gpo0b0l5ols5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "83643204851-kvp4tvtlo5j7ucnd9asff5q0dj3m2iqp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "con.practica2.retav2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83643204851:android:189e307f3b8cb119d46386",
+        "android_client_info": {
+          "package_name": "con.practica2.retav2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83643204851-u6pd7achcp1dd00e90i49r0ja4um8jjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpOFS3EAmBzXuUWhESQhtfdRZ4zAax6q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83643204851-7g0qk24vrmif1io3ahe6gpo0b0l5ols5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "83643204851-kvp4tvtlo5j7ucnd9asff5q0dj3m2iqp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "con.practica2.retav2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

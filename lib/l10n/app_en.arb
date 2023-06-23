@@ -1,0 +1,19 @@
+{
+    "idioma":"English",
+    "holaMundo":"Hello word",
+    "hola":"Hello {username}",
+    "selecionaidioma":"Select a language",
+    "restaurante":"Restaurants",
+    "platosrecomendados":"Recommended Dishes",
+    "mesasdisponibles":"Available Tables",
+    "mesa":"Tables",
+    "cantpersonas":"Amount of people",
+    "menu":"Menu",
+    "pers":"{cantidad} peoples",
+    "nodatos":"No data",
+    "cant":"Cantidad {cantidad}",
+    "agregarcarrito":"Added to your cart",
+    "select":"Select quantity",
+    "carrito":"Cart",
+    "miorden":"My order"
+}
