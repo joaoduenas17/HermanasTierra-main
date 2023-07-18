@@ -1,7 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:http/http.dart' as http;
 import 'registro.dart';
-import 'login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mi Proyecto Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
         fontFamily: 'Roboto', // Fuente predeterminada de Flutter
       ),
       home: MainPage(),
@@ -89,7 +90,6 @@ class _RegistroPageState extends State<RegistroPage> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Realizar acciones cuando el formulario es válido
       _showSuccessDialog();
     }
   }
@@ -165,12 +165,97 @@ class _RegistroPageState extends State<RegistroPage> {
   }
 }
 
-class InicioSesionPage extends StatelessWidget {
+class InicioSesionPage extends StatefulWidget {
   static const routeName = '/inicio-sesion';
 
+  @override
+  _InicioSesionPageState createState() => _InicioSesionPageState();
+}
+
+class _InicioSesionPageState extends State<InicioSesionPage> {
   final _formKey = GlobalKey<FormState>();
   final _usuarioController = TextEditingController();
   final _contrasenaController = TextEditingController();
+
+  @override
+  void dispose() {
+    _usuarioController.dispose();
+    _contrasenaController.dispose();
+    super.dispose();
+  }
+
+  String? _validateField(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Este campo es obligatorio';
+    }
+    return null;
+  }
+
+  Future<void> _saveTokenToCookies(String token) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('token', token);
+  }
+
+  Future<String?> _getTokenFromCookies() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('token');
+  }
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      String token = "example_token";
+      _saveTokenToCookies(token);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Por favor, ingresa todos los campos.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
+  }
+
+  Future<void> _fetchData() async {
+    final response =
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+
+    if (response.statusCode == 200) {
+      List<dynamic> jsonResponse = jsonDecode(response.body);
+      List<String> postTitles =
+          jsonResponse.map((item) => item['title'] as String).toList();
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Títulos de publicaciones'),
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: postTitles
+                  .map(
+                    (title) => Text(title),
+                  )
+                  .toList(),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Cerrar'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,28 +273,20 @@ class InicioSesionPage extends StatelessWidget {
               TextFormField(
                 controller: _usuarioController,
                 decoration: InputDecoration(labelText: 'Usuario'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, ingresa tu usuario';
-                  }
-                  return null;
-                },
+                validator: _validateField,
               ),
               TextFormField(
                 controller: _contrasenaController,
                 decoration: InputDecoration(labelText: 'Contraseña'),
                 obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, ingresa tu contraseña';
-                  }
-                  return null;
-                },
+                validator: _validateField,
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {},
-                child: Text('Iniciar Sesión'),
+                onPressed: () {
+                  _fetchData();
+                },
+                child: Text('Iniciar Sesión y Obtener Datos'),
               ),
               SizedBox(height: 16.0),
               TextButton(
@@ -218,25 +295,23 @@ class InicioSesionPage extends StatelessWidget {
                 },
                 child: Text('¿Olvidaste tu contraseña?'),
               ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  // Acciones para iniciar sesión con Facebook
-                },
-                icon: Icon(Icons.facebook),
-                label: Text('Iniciar sesión con Facebook'),
-              ),
-              SizedBox(height: 8.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  // Acciones para iniciar sesión con Google
-                },
-                icon: Icon(FontAwesome.google),
-                label: const Text('Iniciar sesión con Google'),
-              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla de Inicio'),
+      ),
+      body: Center(
+        child: Text('¡Bienvenido! Esta es la pantalla de inicio.'),
       ),
     );
   }
